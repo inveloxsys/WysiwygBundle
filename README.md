@@ -28,3 +28,5 @@ ckeditor with ajax requests
                 });
 
             })( jQuery );
+
+git clone git@github.com:Studio-42/elFinder.git ./vendor/studio-42/elfinder

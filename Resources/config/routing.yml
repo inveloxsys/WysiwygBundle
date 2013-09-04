@@ -1,0 +1,3 @@
+_wysiwyg:
+    path:     /_wysiwyg/{selector}/{settings_key}.{_format}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:Default:index, _format: js }

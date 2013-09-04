@@ -1,0 +1,20 @@
+{
+    "name": "muchomasfacil/WysiwygBundle",
+    "type": "symfony-bundle",
+    "description": "This bundles makes really easy to add ckeditor4, tinymce4 to your forms inputs with per input field settings. Optional integrate the elfinder file manager. You can extend it to use with your prefered editors.",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Alvaro Marcos",
+            "email": "alvaro@muchomasfacil.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-0": { "MuchoMasFacil\\WysiwygBundle": "" }
+    },
+
+    "target-dir": "MuchoMasFacil/WysiwygBundle"
+}

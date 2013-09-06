@@ -1,3 +1,8 @@
-$( "{{ selector|raw }}" ).ckeditor( {
-     uiColor: '#9AB8F3'
- } );
+if (typeof CKEDITOR == 'undefined') {
+    alert('You must load the CKEDITOR .js and his jquery adapter. http://ckeditor.com');
+}
+else {
+    $( "{{ selector|raw }}" ).ckeditor( {
+        uiColor: '#9AB8F3'
+    });
+}

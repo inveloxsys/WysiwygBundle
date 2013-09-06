@@ -1,10 +1,10 @@
 parameters:
 #    mucho_mas_facil_wysiwyg.example.class: MuchoMasFacil\WysiwygBundle\Example
     mucho_mas_facil_wysiwyg.flavors:
-        ckeditor_default:
+        ckeditor4_default:
             action: MuchoMasFacilWysiwygBundle:Flavors:ckeditor4Default
             template: ~ #guessed from action
-        tinymce_default:
+        tinymce4_default:
             action: MuchoMasFacilWysiwygBundle:Flavors:tinymce4Default
             template: ~ #guessed from action
 

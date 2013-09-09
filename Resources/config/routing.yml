@@ -3,6 +3,19 @@ fos_js_routing:
 
 _wysiwyg:
     path:     /_wysiwyg/{selector}/{flavor_key}.{_format}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:Default:index, _format: js }
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:Wysiwyg:index, _format: js }
     options:
         expose: true
+
+_elfinder:
+    path:     /_elfinder/{selector}/{elfinder_flavor_key}.{_format}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js }    
+
+
+_elfinder_standalone:
+    path:     /_elfinder_standalone/{elfinder_flavor_key}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone}    
+
+_elfinder_connector:    
+    path:     /_elfinder_connector
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:elfinderConnector }    

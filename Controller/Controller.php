@@ -4,7 +4,9 @@ namespace MuchoMasFacil\WysiwygBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-class FlavorsController extends ContainerAware
+
+
+class Controller extends ContainerAware
 {
 
     protected $render_vars = array();
@@ -20,25 +22,6 @@ class FlavorsController extends ContainerAware
         $this->render_vars['parent_controller_name'] = $parent_controller_name;
     }
 
-    public function ckeditor4DefaultAction($selector, $template = null)
-    {
-        $this->render_vars['selector'] = $selector;
-        if (empty($template)) {
-            $template = $this->guessTemplateName(__FUNCTION__, 'js');
-        }
-
-        return $this->container->get('templating')->renderResponse($template, $this->render_vars);
-    }
-
-    public function tinymce4DefaultAction($selector, $template = null)
-    {
-        $this->render_vars['selector'] = $selector;
-        if (empty($template)) {
-            $template = $this->guessTemplateName(__FUNCTION__, 'js');
-        }
-
-        return $this->container->get('templating')->renderResponse($template, $this->render_vars);
-    }
 
     protected function guessBundleAndControllerName($bundle_class_name)
     {
@@ -61,5 +44,22 @@ class FlavorsController extends ContainerAware
         $this->render_vars['action_name'] = str_replace('Action', '', $action_function_name);
 
         return $this->render_vars['bundle_name'] . ':' . $this->render_vars['controller_name'] . ':' . $this->render_vars['action_name'] . '.'.$template_format.'.twig';
+    }
+
+        /**
+     * Forwards the request to another controller.
+     *
+     * @param string $controller The controller name (a string like BlogBundle:Post:index)
+     * @param array  $path       An array of path parameters
+     * @param array  $query      An array of query parameters
+     *
+     * @return Response A Response instance
+     */
+    protected function forward($controller, array $path = array(), array $query = array())
+    {
+        $path['_controller'] = $controller;
+        $subRequest = $this->container->get('request')->duplicate($query, null, $path);
+
+        return $this->container->get('http_kernel')->handle($subRequest, HttpKernelInterface::SUB_REQUEST);
     }
 }

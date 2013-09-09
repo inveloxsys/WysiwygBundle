@@ -3,12 +3,12 @@
 namespace MuchoMasFacil\WysiwygBundle\ElFinder;
 
 
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinderConnector.class.php';
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinder.class.php';
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinderVolumeDriver.class.php';
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinderVolumeLocalFileSystem.class.php';
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinderVolumeMySQL.class.php';
-require dirname(__FILE__).'/../../../../../studio-42/elfinder/php/elFinderVolumeFTP.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinderConnector.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinder.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinderVolumeDriver.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinderVolumeLocalFileSystem.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinderVolumeMySQL.class.php';
+require dirname(__FILE__).'/../../../../../component/elfinder/php/elFinderVolumeFTP.class.php';
 
 class Connector
 {

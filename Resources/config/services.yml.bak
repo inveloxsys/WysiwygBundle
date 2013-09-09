@@ -1,22 +1,19 @@
 parameters:
 #    mucho_mas_facil_wysiwyg.example.class: MuchoMasFacil\WysiwygBundle\Example
     mucho_mas_facil_wysiwyg.flavors:
-        ckeditor4_default:
-            action: MuchoMasFacilWysiwygBundle:Wysiwyg:ckeditor4Default
+        ckeditor_default:
+            action: MuchoMasFacilWysiwygBundle:Flavors:ckeditor4Default
             template: ~ #guessed from action
-        tinymce4_default:
-            action: MuchoMasFacilWysiwygBundle:Wysiwyg:tinymce4Default
+        tinymce_default:
+            action: MuchoMasFacilWysiwygBundle:Flavors:tinymce4Default
             template: ~ #guessed from action
 
     mucho_mas_facil_wysiwyg.elfinder.flavors:
-        images:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:images
+        ckeditor_default:
+            action: MuchoMasFacilWysiwygBundle:Flavors:ckeditor4Default
             template: ~ #guessed from action
-        pdfs:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:pdfs
-            template: ~ #guessed from action            
-        generic:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:generic
+        tinymce_default:
+            action: MuchoMasFacilWysiwygBundle:Flavors:tinymce4Default
             template: ~ #guessed from action
 
 services:

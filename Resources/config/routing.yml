@@ -10,7 +10,8 @@ _wysiwyg:
 _elfinder:
     path:     /_elfinder/{selector}/{elfinder_flavor_key}.{_format}
     defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js }    
-
+    options:
+        expose: true
 
 _elfinder_standalone:
     path:     /_elfinder_standalone/{elfinder_flavor_key}

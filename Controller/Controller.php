@@ -4,6 +4,7 @@ namespace MuchoMasFacil\WysiwygBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 
 class Controller extends ContainerAware

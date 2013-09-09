@@ -1,0 +1,42 @@
+{% extends 'MuchoMasFacilWysiwygBundle:ElFinder:layout.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+{% javascripts 
+    'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'
+    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'
+    '../vendor/component/elfinder/js/elFinder.js'
+    '../vendor/component/elfinder/js/elFinder.version.js'
+    '../vendor/component/elfinder/js/jquery.elfinder.js'
+    '../vendor/component/elfinder/js/elFinder.resources.js'
+    '../vendor/component/elfinder/js/elFinder.options.js'
+    '../vendor/component/elfinder/js/elFinder.history.js'
+    '../vendor/component/elfinder/js/elFinder.command.js'
+    '../vendor/component/elfinder/js/ui/*'
+    '../vendor/component/elfinder/js/commands/*'
+    '../vendor/component/elfinder/js/i18n/*'
+    '../vendor/component/elfinder/js/proxy/*'
+
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+{% stylesheets '../vendor/component/elfinder/css/*'  %} {# filter='cssrewrite' #}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    });
+</script>
+
+</head>
+<body>
+    <div id="elfinder">finder <span>here</span></div>
+</body>
+</html>

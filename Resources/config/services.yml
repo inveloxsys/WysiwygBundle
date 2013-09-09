@@ -2,21 +2,21 @@ parameters:
 #    mucho_mas_facil_wysiwyg.example.class: MuchoMasFacil\WysiwygBundle\Example
     mucho_mas_facil_wysiwyg.flavors:
         ckeditor4_default:
-            action: MuchoMasFacilWysiwygBundle:Wysiwyg:ckeditor4Default
+            action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:ckeditor4Default
             template: ~ #guessed from action
         tinymce4_default:
-            action: MuchoMasFacilWysiwygBundle:Wysiwyg:tinymce4Default
+            action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:tinymce4Default
             template: ~ #guessed from action
 
     mucho_mas_facil_wysiwyg.elfinder.flavors:
         images:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:images
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:images
             template: ~ #guessed from action
         pdfs:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:pdfs
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:pdfs
             template: ~ #guessed from action            
         generic:
-            action: MuchoMasFacilWysiwygBundle:ElFinder:generic
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:generic
             template: ~ #guessed from action
 
 services:

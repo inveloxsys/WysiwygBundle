@@ -12,7 +12,6 @@ Add the route you need to secure to the security.yml access-control part:
 '''
 
 ## ElFinder (file manager)
-http://www.craftitonline.com/2013/09/make-no-js-mess-in-your-symfony2-project-use-component/
 
 app/console assetic:dump
 

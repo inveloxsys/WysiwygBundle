@@ -11,13 +11,13 @@ parameters:
     mucho_mas_facil_wysiwyg.elfinder.flavors:
         images:
             action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:images
-            template: ~ #guessed from action
+            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
         pdfs:
             action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:pdfs
-            template: ~ #guessed from action            
+            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
         generic:
             action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:generic
-            template: ~ #guessed from action
+            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
 
 services:
 #    mucho_mas_facil_wysiwyg.example:

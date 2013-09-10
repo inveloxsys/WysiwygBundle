@@ -11,28 +11,34 @@ use MuchoMasFacil\WysiwygBundle\ElFinder\Connector;
 class ElFinderController extends Controller
 {
 
-    public function indexAction($selector, $flavor_key)
-    {        
-        $flavors = $this->container->getParameter('mucho_mas_facil_wysiwyg.elfinder.flavors');
-        if (!isset($flavors[$flavor_key])) {
-            throw new \Exception('The flavor with key `'. $flavor_key .'` is not defined in mucho_mas_facil_wysiwyg.flavors configuration');
+    public function indexAction($selector, $elfinder_flavor_key = 'images')
+    {     
+
+        $flavors = $this->container->getParameter('mucho_mas_facil_wysiwyg.elfinder.flavors');        
+        if (!isset($flavors[$elfinder_flavor_key])) {
+            throw new \Exception('The flavor with key `'. $elfinder_flavor_key .'` is not defined in mucho_mas_facil_wysiwyg.elfinder.flavors configuration');
+        }        
+        $settings = $flavors[$elfinder_flavor_key];
+        if (empty($settings['template'])) {
+            $settings['template'] = 'MuchoMasFacilWysiwygBundle:ElFinderFlavors:elFinder.js.twig';
         }
-        $settings = $flavors[$flavor_key];
+
         $response = $this->forward($settings['action'], array(
             'selector'  => $selector,
             'template' => $settings['template'],
+            'elfinder_flavor_key' => $elfinder_flavor_key,
         ));
 
         return $response;
     }
 
-    public function standAloneAction()
+    public function standAloneAction( $elfinder_flavor_key = 'images')
     {
-        
+        $this->render_vars['elfinder_flavor_key'] = $elfinder_flavor_key;
         return $this->container->get('templating')->renderResponse($this->guessTemplateName(__FUNCTION__), $this->render_vars);
     }
 
-    public function elfinderConnectorAction()
+    public function elfinderConnectorAction( $elfinder_flavor_key = 'images')
     {
         //https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options        
         $opts = array(

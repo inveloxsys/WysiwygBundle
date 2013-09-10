@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-{% stylesheets '../vendor/component/elfinder/css/*'  %} {# filter='cssrewrite' #}
+{% stylesheets 'components/elfinder/css/*' output='components/elfinder/css_compiled/elfinder.css' %} {# filter='cssrewrite' #}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}

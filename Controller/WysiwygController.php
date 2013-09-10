@@ -17,6 +17,7 @@ class WysiwygController extends Controller
         $response = $this->forward($settings['action'], array(
             'selector'  => $selector,
             'template' => $settings['template'],
+            'flavor_key' => $flavor_key,
         ));
 
         return $response;

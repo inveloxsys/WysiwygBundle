@@ -9,14 +9,14 @@ _wysiwyg:
 
 _elfinder:
     path:     /_elfinder/{selector}/{elfinder_flavor_key}.{_format}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js }    
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js, elfinder_flavor_key: images }    
     options:
         expose: true
 
 _elfinder_standalone:
     path:     /_elfinder_standalone/{elfinder_flavor_key}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone}    
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone, elfinder_flavor_key: images}    
 
 _elfinder_connector:    
-    path:     /_elfinder_connector
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:elfinderConnector }    
+    path:     /_elfinder_connector/{elfinder_flavor_key}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:elfinderConnector, elfinder_flavor_key: images }    

@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "friendsofsymfony/jsrouting-bundle": "~1.1",
+        "friendsofsymfony/jsrouting-bundle": "~1.1"
     },
     "autoload": {
         "psr-0": { "MuchoMasFacil\\WysiwygBundle": "" }

@@ -10,8 +10,42 @@
             "email": "alvaro@muchomasfacil.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "component/elfinder",
+                "type": "component",
+                "version": "dev-master",
+                "source": {
+                    "url": "git@github.com:Studio-42/elFinder.git",
+                    "type": "git",
+                    "reference": "2.x"
+                },
+                "require": {
+                    "robloach/component-installer": "*"
+                },
+                "extra": {
+                    "component": {
+                        "scripts": [
+                            "js/*.js",
+                            "js/*/*.js"
+                        ],
+                        "styles" : [
+                            "css/*.css"
+                        ],
+                        "files": [
+                            "img/*.png",
+                            "img/*.gif"                                                        
+                        ]
+                    }
+                }
+            }
+        }
+    ],
     "require": {
-        "friendsofsymfony/jsrouting-bundle": "~1.1"
+        "friendsofsymfony/jsrouting-bundle": "~1.1",
+        "component/elfinder": "dev-master"
     },
     "autoload": {
         "psr-0": { "MuchoMasFacil\\WysiwygBundle": "" }

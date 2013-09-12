@@ -17,6 +17,17 @@ class WysiwygFlavorsController extends Controller
         return $this->container->get('templating')->renderResponse($template, $this->render_vars);
     }
 
+    public function ckeditor4ElfinderAction($selector, $template = null, $flavor_key = null)
+    {
+        $this->render_vars['selector'] = $selector;
+        $this->render_vars['flavor_key'] = $flavor_key;
+        if (empty($template)) {
+            $template = $this->guessTemplateName(__FUNCTION__, 'js');
+        }
+
+        return $this->container->get('templating')->renderResponse($template, $this->render_vars);
+    }
+
     public function tinymce4DefaultAction($selector, $template = null, $flavor_key = null)
     {
         $this->render_vars['selector'] = $selector;
@@ -27,5 +38,18 @@ class WysiwygFlavorsController extends Controller
 
         return $this->container->get('templating')->renderResponse($template, $this->render_vars);
     }
+
+    public function tinymce4ElfinderAction($selector, $template = null, $flavor_key = null)
+    {
+        $this->render_vars['selector'] = $selector;
+        $this->render_vars['flavor_key'] = $flavor_key;
+        if (empty($template)) {
+            $template = $this->guessTemplateName(__FUNCTION__, 'js');
+        }
+
+        return $this->container->get('templating')->renderResponse($template, $this->render_vars);
+    }
+
+
 
 }

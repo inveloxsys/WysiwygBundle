@@ -1,8 +1,9 @@
 if (typeof tinymce == 'undefined') {
-    alert('You must load the CKEDITOR .js file in your page. http://www.tinymce.com/');
+    alert('You must load the tinymce .js file in your page. http://www.tinymce.com/');
 }
 else {
     tinymce.init({
         selector: "{{ selector|raw }}"
+        {% block more_settings %}{% endblock more_settings %}
     });
 }

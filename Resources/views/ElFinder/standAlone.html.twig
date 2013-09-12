@@ -13,16 +13,26 @@
 
 {% set selector = '#' ~ elfinder_id %}
 
-    <div id="{{ elfinder_id }}">finder <span>here</span></div>
+    <div id="{{ elfinder_id }}"></div>
 
 {% block javascripts %}
     
     {{ include('MuchoMasFacilWysiwygBundle:ElFinder:javascripts.html.twig') }}
     
     <script type="text/javascript" charset="utf-8">
+
+    //this function user by elfinder ckeditor integration
+    function getUrlParam( paramName ) {
+        var reParam = new RegExp( '(?:[\?&]|&)' + paramName + '=([^&]+)', 'i' ) ;
+        var match = window.location.search.match(reParam) ;
+
+        return ( match && match.length > 1 ) ? match[ 1 ] : null ;
+    }
+
+
     $(document).ready(function() {
         
-        {{ render(controller('MuchoMasFacilWysiwygBundle:ElFinder:index', {'selector': selector, 'elfinder_flavor_key': elfinder_flavor_key})) }}        
+        {{ render(controller('MuchoMasFacilWysiwygBundle:ElFinder:index', {'selector': selector, 'elfinder_flavor_key': elfinder_flavor_key, 'elfinder_connector_key': elfinder_connector_key})) }}        
 
     });
     </script>

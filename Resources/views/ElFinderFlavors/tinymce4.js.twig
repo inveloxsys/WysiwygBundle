@@ -1,0 +1,9 @@
+    $('{{ selector|raw }}').elfinder({
+        url : '{{ path('_elfinder_connector', {'elfinder_connector_key': elfinder_connector_key})|raw }}'
+        ,getFileCallback : function(file) {            
+            top.tinymce.activeEditor.windowManager.getParams().setUrl(file.url.replace("{{ app.request.getSchemeAndHttpHost() }}",""));
+            // close popup window
+            top.tinymce.activeEditor.windowManager.close();
+        }
+        ,resizable: false
+    });

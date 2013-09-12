@@ -18,7 +18,7 @@ class WysiwygController extends Controller
             'selector'  => $selector,
             'template' => $settings['template'],
             'flavor_key' => $flavor_key,
-        ));
+        ), $this->container->get('request')->query->all());
 
         return $response;
     }

@@ -1,0 +1,7 @@
+{% extends bundle_name ~ ':' ~ controller_name ~ ':ckeditor4Default.js.twig' %}
+
+{% block more_settings %}
+,filebrowserBrowseUrl: '{{ path('_elfinder_standalone', {'elfinder_flavor_key': 'ckeditor4', 'elfinder_connector_key': 'files'}) }}'
+,filebrowserImageBrowseUrl: '{{ path('_elfinder_standalone', {'elfinder_flavor_key': 'ckeditor4', 'elfinder_connector_key': 'images'}) }}'
+,filebrowserWindowHeight: '300'
+{% endblock more_settings %}

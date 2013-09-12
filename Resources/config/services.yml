@@ -4,20 +4,61 @@ parameters:
         ckeditor4_default:
             action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:ckeditor4Default
             template: ~ #guessed from action
+        ckeditor4_elfinder:
+            action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:ckeditor4Elfinder
+            template: ~ #guessed from action
         tinymce4_default:
             action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:tinymce4Default
             template: ~ #guessed from action
+        tinymce4_elfinder:
+            action: MuchoMasFacilWysiwygBundle:WysiwygFlavors:tinymce4Elfinder
+            template: ~ #guessed from action
 
-    mucho_mas_facil_wysiwyg.elfinder.flavors:
+    mucho_mas_facil_wysiwyg.elfinder_flavors:
+        default:
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:default
+            template: ~ #guessed from action
+        ckeditor4:
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:ckeditor4
+            template: ~ #guessed from action
+        tinymce4:
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:tinymce4
+            template: ~ #guessed from action
+
+    mucho_mas_facil_wysiwyg.elfinder_connectors:
+    # take a look at https://github.com/Studio-42/elFinder/wiki/ for connector configuration options
         images:
-            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:images
-            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
+            action: MuchoMasFacilWysiwygBundle:ElFinderConnectors:default
+            options: 
+                roots:
+                    -
+                        driver: LocalFileSystem   #driver for accessing file system (REQUIRED)
+                        path: '%kernel.root_dir%/../web/uploads/images' # path to files (REQUIRED)
+                        URL: ~ # guessed from path                        
+                        uploadDeny: [all] 
+                        uploadAllow: [image] # allow any images                        
+                        uploadMaxSize: 2M 
+
         pdfs:
-            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:pdfs
-            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
-        generic:
-            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:generic
-            template: ~ #default MuchoMasFacilWysiwygBundle:ElFinder:elFinder.js.twit
+            action: MuchoMasFacilWysiwygBundle:ElFinderConnectors:default
+            options:
+                roots:
+                    -
+                        driver: LocalFileSystem   #driver for accessing file system (REQUIRED)
+                        path: '%kernel.root_dir%/../web/uploads/pdfs' # path to files (REQUIRED)
+                        URL: ~ # guessed from path
+                        uploadDeny: [all] 
+                        uploadAllow: [application/pdf, application/x-pdf] # allow only pdf                        
+                        uploadMaxSize: 2M 
+        files:
+            action: MuchoMasFacilWysiwygBundle:ElFinderConnectors:default
+            options:
+                roots:
+                    -
+                        driver: LocalFileSystem   #driver for accessing file system (REQUIRED)
+                        path: '%kernel.root_dir%/../web/uploads/files' # path to files (REQUIRED)
+                        URL: ~ # guessed from path
+                        uploadMaxSize: 2M
 
 services:
 #    mucho_mas_facil_wysiwyg.example:

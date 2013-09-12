@@ -8,15 +8,15 @@ _wysiwyg:
         expose: true
 
 _elfinder:
-    path:     /_elfinder/{selector}/{elfinder_flavor_key}.{_format}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js, elfinder_flavor_key: images }    
+    path:     /_elfinder/{selector}/{elfinder_flavor_key}/{elfinder_connector_key}.{_format}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:index, _format: js}    
     options:
         expose: true
 
 _elfinder_standalone:
-    path:     /_elfinder_standalone/{elfinder_flavor_key}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone, elfinder_flavor_key: images}    
+    path:     /_elfinder_standalone/{elfinder_flavor_key}/{elfinder_connector_key}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone, elfinder_flavor_key: default, elfinder_connector_key: images}    
 
 _elfinder_connector:    
-    path:     /_elfinder_connector/{elfinder_flavor_key}
-    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:elfinderConnector, elfinder_flavor_key: images }    
+    path:     /_elfinder_connector/{elfinder_connector_key}
+    defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:elfinderConnector, elfinder_connector_key: images }    

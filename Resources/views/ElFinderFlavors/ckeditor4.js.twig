@@ -1,0 +1,10 @@
+    var funcNum = getUrlParam('CKEditorFuncNum');
+
+    $('{{ selector|raw }}').elfinder({
+        url : '{{ path('_elfinder_connector', {'elfinder_connector_key': elfinder_connector_key})|raw }}'
+        ,getFileCallback : function(file) {            
+            window.opener.CKEDITOR.tools.callFunction(funcNum, file.url.replace("{{ app.request.getSchemeAndHttpHost() }}",""));
+            window.close();
+        }
+        ,resizable: false
+    });

@@ -27,13 +27,15 @@ class MuchoMasFacilWysiwygExtension extends Extension
         //and add them to our list
         $parameter_configs[] = array(
             'flavors'  => $container->getParameter('mucho_mas_facil_wysiwyg.flavors'),
-            //'elfinder_settings'  => $container->getParameter('mucho_mas_facil_wysiwyg.elfinder_settings'),
+            'elfinder_flavors'  => $container->getParameter('mucho_mas_facil_wysiwyg.elfinder_flavors'),
+            'elfinder_connectors'  => $container->getParameter('mucho_mas_facil_wysiwyg.elfinder_connectors'),
             );
 
         $configuration = new Configuration();
         $final_config = $this->processConfiguration($configuration, array_merge($parameter_configs, $configs));
 
         $container->setParameter('mucho_mas_facil_wysiwyg.flavors', $final_config['flavors']);
-        //$container->setParameter('mucho_mas_facil_wysiwyg.elfinder_settings', $final_config['elfinder_settings']);
+        $container->setParameter('mucho_mas_facil_wysiwyg.elfinder_flavors', $final_config['elfinder_flavors']);
+        $container->setParameter('mucho_mas_facil_wysiwyg.elfinder_connectors', $final_config['elfinder_connectors']);        
     }
 }

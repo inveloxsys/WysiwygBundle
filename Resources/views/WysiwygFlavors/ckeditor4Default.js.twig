@@ -4,5 +4,6 @@ if (typeof CKEDITOR == 'undefined') {
 else {
     $( "{{ selector|raw }}" ).ckeditor( {
         uiColor: '#9AB8F3'
+        {% block more_settings %}{% endblock more_settings %}
     });
 }

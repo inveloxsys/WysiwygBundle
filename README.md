@@ -15,12 +15,10 @@ Add the route you need to secure to the security.yml access-control part:
 
 app/console assetic:dump
 
-
+Pending:
+add flash connector
 
 todo
-- pasar "component/elfinder": "dev-master" al composer de Wy...Bundle
-
-- cambiar en composer.json y en template las rutas en vez de a vendor, a extra
 - integrar con ckeditor y tinymce
 
 

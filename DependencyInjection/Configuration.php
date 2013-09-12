@@ -33,18 +33,34 @@ class Configuration implements ConfigurationInterface
             ->end()
         ;
 
-        // $rootNode
-        //     ->children()
-        //         ->arrayNode('elfinder_settings')
-        //             ->useAttributeAsKey('name')
-        //             ->prototype('array')
-        //             ->children()
-        //                 //->scalarNode('action')->isRequired()->end()
-        //                 //->scalarNode('template')->defaultNull()->end()
-        //             ->end()
-        //         ->end()
-        //     ->end()
-        // ;
+        $rootNode
+            ->children()
+                ->arrayNode('elfinder_flavors')
+                    ->useAttributeAsKey('name')
+                    ->prototype('array')
+                    ->children()
+                        ->scalarNode('action')->isRequired()->end()
+                        ->scalarNode('template')->defaultNull()->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+
+        $rootNode
+            ->children()
+                ->arrayNode('elfinder_connectors')
+                    ->useAttributeAsKey('name')
+                    ->prototype('array')
+                    ->children()
+                        ->scalarNode('action')->isRequired()->end()
+                        ->arrayNode('options')
+                            ->useAttributeAsKey('name')
+                            ->prototype('variable')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

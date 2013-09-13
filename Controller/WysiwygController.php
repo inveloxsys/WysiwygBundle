@@ -7,7 +7,7 @@ use MuchoMasFacil\WysiwygBundle\Controller\Controller;
 class WysiwygController extends Controller
 {
 
-    public function indexAction($selector, $flavor_key)
+    public function indexAction($selector, $flavor_key, Request $request)
     {        
         $flavors = $this->container->getParameter('mucho_mas_facil_wysiwyg.flavors');
         if (!isset($flavors[$flavor_key])) {
@@ -18,7 +18,7 @@ class WysiwygController extends Controller
             'selector'  => $selector,
             'template' => $settings['template'],
             'flavor_key' => $flavor_key,
-        ), $this->container->get('request')->query->all());
+        ), $request->query->all());
 
         return $response;
     }

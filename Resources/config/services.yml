@@ -24,6 +24,9 @@ parameters:
         tinymce4:
             action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:tinymce4
             template: ~ #guessed from action
+        input:
+            action: MuchoMasFacilWysiwygBundle:ElFinderFlavors:input
+            template: ~ #guessed from action
 
     mucho_mas_facil_wysiwyg.elfinder_connectors:
     # take a look at https://github.com/Studio-42/elFinder/wiki/ for connector configuration options

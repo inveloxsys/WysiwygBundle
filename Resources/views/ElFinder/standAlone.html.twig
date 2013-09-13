@@ -32,7 +32,7 @@
 
     $(document).ready(function() {
         
-        {{ render(controller('MuchoMasFacilWysiwygBundle:ElFinder:index', {'selector': selector, 'elfinder_flavor_key': elfinder_flavor_key, 'elfinder_connector_key': elfinder_connector_key})) }}        
+        {{ render(controller('MuchoMasFacilWysiwygBundle:ElFinder:index', ({'selector': selector, 'elfinder_flavor_key': elfinder_flavor_key, 'elfinder_connector_key': elfinder_connector_key, 'request': app.request}))) }}        
 
     });
     </script>

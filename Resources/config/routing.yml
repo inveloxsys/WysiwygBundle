@@ -16,6 +16,8 @@ _elfinder:
 _elfinder_standalone:
     path:     /_elfinder_standalone/{elfinder_flavor_key}/{elfinder_connector_key}
     defaults: { _controller: MuchoMasFacilWysiwygBundle:ElFinder:standAlone, elfinder_flavor_key: default, elfinder_connector_key: images}    
+    options:
+        expose: true
 
 _elfinder_connector:    
     path:     /_elfinder_connector/{elfinder_connector_key}

@@ -4,12 +4,13 @@ namespace MuchoMasFacil\WysiwygBundle\Controller;
 
 use MuchoMasFacil\WysiwygBundle\Controller\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ElFinderController extends Controller
 {
 
-    public function indexAction($selector, $elfinder_flavor_key = 'default', $elfinder_connector_key = 'images')
+    public function indexAction($selector, $elfinder_flavor_key = 'default', $elfinder_connector_key = 'images', Request $request)
     {     
 
         $flavors = $this->container->getParameter('mucho_mas_facil_wysiwyg.elfinder_flavors');        
@@ -17,13 +18,12 @@ class ElFinderController extends Controller
             throw new \Exception('The flavor with key `'. $elfinder_flavor_key .'` is not defined in mucho_mas_facil_wysiwyg.elfinder_flavors configuration');
         }        
         $settings = $flavors[$elfinder_flavor_key];
-
         $response = $this->forward($settings['action'], array(
             'selector'  => $selector,
             'template' => $settings['template'],
             'elfinder_flavor_key' => $elfinder_flavor_key,
             'elfinder_connector_key' => $elfinder_connector_key,
-        ), $this->container->get('request')->query->all());
+        ), $request->query->all());
         
         
         return $response;

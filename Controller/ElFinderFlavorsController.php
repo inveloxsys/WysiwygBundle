@@ -42,4 +42,18 @@ class ElFinderFlavorsController extends Controller
         return $this->container->get('templating')->renderResponse($template, $this->render_vars);
     }
 
+    public function inputAction($selector, $template = null, $elfinder_flavor_key = 'default', $elfinder_connector_key = 'images')
+    {
+        $this->render_vars['selector'] = $selector;
+        $this->render_vars['elfinder_flavor_key'] = $elfinder_flavor_key;
+        $this->render_vars['elfinder_connector_key'] = $elfinder_connector_key;
+        $this->render_vars['input_name'] = $this->container->get('request')->query->get('input_name');
+        
+        if (empty($template)) {
+            $template = $this->guessTemplateName(__FUNCTION__, 'js');
+        }
+
+        return $this->container->get('templating')->renderResponse($template, $this->render_vars);
+    }
+
 }

@@ -1,0 +1,9 @@
+    $('{{ selector|raw }}').elfinder({
+        url : '{{ path('_elfinder_connector', {'elfinder_connector_key': elfinder_connector_key})|raw }}'
+            ,getFileCallback : function(file) {            
+            $("input[name={{ input_name }}]", window.opener.document).val(file.url.replace("{{ app.request.getSchemeAndHttpHost() }}",""));
+            // close popup window
+            window.close();
+        }
+        ,resizable: false
+    });
